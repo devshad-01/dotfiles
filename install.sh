@@ -41,6 +41,7 @@ ln -sf "$(pwd)/alacritty/alacritty.toml" ~/.config/alacritty/alacritty.toml
 # Link X resources for high DPI
 echo -e "${BLUE}Linking X resources...${NC}"
 ln -sf "$(pwd)/.Xresources" ~/.Xresources
+ln -sf "$(pwd)/.xprofile" ~/.xprofile
 xrdb -merge ~/.Xresources
 
 # Link scripts

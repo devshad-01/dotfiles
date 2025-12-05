@@ -1,0 +1,15 @@
+# X Session Profile - Environment variables for consistent DPI/scaling
+# This file is loaded before the window manager starts
+
+# X11 DPI setting
+export GDK_SCALE=1
+export GDK_DPI_SCALE=1.25
+
+# Qt scaling
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_SCALE_FACTOR=1.25
+export QT_FONT_DPI=120
+
+# GTK scaling
+export GDK_SCALE=1
+export GDK_DPI_SCALE=1.25
