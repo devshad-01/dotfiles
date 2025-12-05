@@ -10,7 +10,7 @@ configuration {
     display-window: "Windows";
     show-icons: true;
     icon-theme: "Papirus-Dark";
-    font: "JetBrainsMono Nerd Font 12";
+    font: "JetBrainsMono Nerd Font 16";
     drun-display-format: "{name}";
     terminal: "i3-sensible-terminal";
 }
@@ -46,7 +46,7 @@ configuration {
 
 window {
     location: center;
-    width: 600;
+    width: 800;
     background-color: @bg;
     border: 2px;
     border-color: @blue;

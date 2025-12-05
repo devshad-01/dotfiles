@@ -121,6 +121,22 @@ Edit `~/.config/picom/picom.conf` to change opacity and blur settings.
 - Check polybar logs: `tail -f /tmp/polybar.log`
 - Test rofi themes: `rofi-theme-selector`
 
+### High DPI Displays
+If text is too small (e.g., on HP Elite x360 or similar high-res laptops):
+- Fonts are already set to larger sizes (14-16pt)
+- For terminal, install and configure a terminal with better font support:
+  ```bash
+  sudo apt install kitty
+  # Edit ~/.config/kitty/kitty.conf and set: font_size 14.0
+  ```
+- Or for xterm/urxvt, add to `~/.Xresources`:
+  ```
+  Xft.dpi: 144
+  XTerm*faceName: JetBrainsMono Nerd Font
+  XTerm*faceSize: 14
+  ```
+  Then run: `xrdb ~/.Xresources`
+
 ## Fonts
 
 Recommended fonts (install for best experience):

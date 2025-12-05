@@ -7,8 +7,8 @@
     follow = mouse
     
     ### Geometry ###
-    width = 300
-    height = 300
+    width = 400
+    height = 400
     origin = top-right
     offset = 10x50
     scale = 0
@@ -34,7 +34,7 @@
     sort = yes
     
     ### Text ###
-    font = JetBrainsMono Nerd Font 11
+    font = JetBrainsMono Nerd Font 14
     line_height = 0
     markup = full
     format = "<b>%s</b>\n%b"
