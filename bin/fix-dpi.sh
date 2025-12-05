@@ -3,8 +3,8 @@
 # Set consistent DPI and font settings for all applications
 # This ensures GTK, Qt, and X11 apps all use similar scaling
 
-# GTK Settings - use larger fonts to match DPI 192
-gsettings set org.gnome.desktop.interface text-scaling-factor 1.6
+# GTK Settings - 125% scaling for 2560x1440
+gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
 gsettings set org.gnome.desktop.interface font-name 'Noto Sans 10'
 gsettings set org.gnome.desktop.interface document-font-name 'Noto Sans 10'
 gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Nerd Font 10'

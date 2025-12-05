@@ -201,6 +201,7 @@ bindsym $mod+r mode "resize"
 # ------------------------------------------
 
 # Auto-start apps for beauty and functionality
+exec --no-startup-id xrandr --output eDP-1 --mode 2560x1440
 exec --no-startup-id ~/bin/fix-dpi.sh
 exec --no-startup-id nm-applet
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
