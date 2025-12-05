@@ -2,14 +2,12 @@
 # This file is loaded before the window manager starts
 
 # X11 DPI setting
-export GDK_SCALE=1
-export GDK_DPI_SCALE=1.25
+xrdb -merge ~/.Xresources
 
-# Qt scaling
-export QT_AUTO_SCREEN_SCALE_FACTOR=1
-export QT_SCALE_FACTOR=1.25
+# GTK scaling (for Firefox, GNOME apps, lxappearance)
+export GDK_SCALE=1
+export GDK_DPI_SCALE=1.0
+
+# Qt scaling (for pcmanfm-qt, etc.) - Don't use QT_SCALE_FACTOR, it's too aggressive
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_FONT_DPI=120
-
-# GTK scaling
-export GDK_SCALE=1
-export GDK_DPI_SCALE=1.25
