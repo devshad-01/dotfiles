@@ -10,7 +10,7 @@ profile=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
 
 # Set font
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/ use-system-font false
-gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/ font 'JetBrainsMono Nerd Font 13'
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/ font 'JetBrainsMono Nerd Font 16'
 
 # Set Catppuccin Mocha colors
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/ use-theme-colors false
