@@ -134,6 +134,19 @@ Edit `~/.config/picom/picom.conf` to change opacity and blur settings.
 - Check polybar logs: `tail -f /tmp/polybar.log`
 - Test rofi themes: `rofi-theme-selector`
 
+### Set Wallpaper
+Easy way to set your wallpaper:
+```bash
+# Method 1: Use the helper script
+~/bin/set-wallpaper.sh ~/Downloads/your-image.jpg
+
+# Method 2: Manually
+cp your-image.jpg ~/Pictures/wallpaper.jpg
+feh --bg-scale ~/Pictures/wallpaper.jpg
+```
+
+The wallpaper will load automatically on next i3 restart.
+
 ### High DPI Displays
 If text is too small (e.g., on HP Elite x360 or similar high-res laptops):
 - Fonts are already set to larger sizes (14-16pt)
