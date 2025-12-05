@@ -10,6 +10,9 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 
+! Cursor size for high DPI
+Xcursor.size: 24
+
 ! Terminal Settings (XTerm/URxvt)
 XTerm*faceName: JetBrainsMono Nerd Font
 XTerm*faceSize: 14

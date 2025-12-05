@@ -1,0 +1,21 @@
+# High DPI / Scaling configuration for i3wm
+# Add this to your ~/.profile or ~/.xprofile
+
+# X Resources (for X11 apps)
+xrdb -merge ~/.Xresources
+
+# Qt applications scaling
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_SCALE_FACTOR=1.0
+export QT_FONT_DPI=120
+
+# GTK applications scaling  
+export GDK_SCALE=1
+export GDK_DPI_SCALE=1.25
+
+# Cursor size
+export XCURSOR_SIZE=24
+
+# Apply GTK settings
+gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
+gsettings set org.gnome.desktop.interface font-name 'Noto Sans 11'
