@@ -37,6 +37,11 @@ ln -sf "$(pwd)/rofi/config.rasi" ~/.config/rofi/config.rasi
 ln -sf "$(pwd)/picom/picom.conf" ~/.config/picom/picom.conf
 ln -sf "$(pwd)/dunst/dunstrc" ~/.config/dunst/dunstrc
 
+# Link X resources for high DPI
+echo -e "${BLUE}Linking X resources...${NC}"
+ln -sf "$(pwd)/.Xresources" ~/.Xresources
+xrdb -merge ~/.Xresources
+
 # Link scripts
 echo -e "${BLUE}Linking scripts...${NC}"
 ln -sf "$(pwd)/bin/launch-polybar.sh" ~/.config/polybar/launch.sh

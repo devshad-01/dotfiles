@@ -1,0 +1,23 @@
+! X Resources Configuration for High DPI Display
+! HP Elite x360 1030 G2 - 1920x1080 on 13.3 inch display
+
+! DPI Settings - increase for high DPI displays
+Xft.dpi: 144
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+! Terminal Settings (XTerm/URxvt)
+XTerm*faceName: JetBrainsMono Nerd Font
+XTerm*faceSize: 14
+XTerm*renderFont: true
+XTerm*background: #1e1e2e
+XTerm*foreground: #cdd6f4
+
+URxvt*font: xft:JetBrainsMono Nerd Font:size=14
+URxvt*letterSpace: 0
+URxvt*background: #1e1e2e
+URxvt*foreground: #cdd6f4

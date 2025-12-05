@@ -13,6 +13,7 @@ A beautiful i3 window manager setup inspired by ThePrimeagen with Catppuccin Moc
 - **Picom** - Compositor for transparency, rounded corners, and blur effects
 - **Dunst** - Notification daemon
 - **Catppuccin Mocha** - Consistent color scheme across all apps
+- **High DPI optimized** - Perfect for high-resolution laptops (HP Elite x360 1030 G2, etc.)
 
 ## Required Packages
 
