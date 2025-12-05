@@ -72,7 +72,7 @@ i3-msg restart
 - `Alt + d` - App launcher (Rofi)
 - `Alt + Shift + f` - File manager (PCManFM-Qt)
 - `Alt + Shift + v` - Volume control (Pavucontrol)
-- `Alt + Shift + w` - WiFi/Network settings
+- `Alt + Shift + w` - WiFi connection (scan & connect to networks)
 - `Alt + Shift + b` - Bluetooth manager
 - `Print` or `Alt + Shift + s` - Screenshot (Flameshot)
 - `Alt + h/j/k/l` - Navigate windows (vim-style)

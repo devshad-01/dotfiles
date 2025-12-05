@@ -82,7 +82,7 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 # Essential tools keybindings
 bindsym $mod+Shift+f exec pcmanfm-qt                       # File manager (Qt-based, better theming)
 bindsym $mod+Shift+v exec pavucontrol                      # Volume control
-bindsym $mod+Shift+w exec nm-connection-editor             # WiFi/Network settings
+bindsym $mod+Shift+w exec alacritty -e nmtui               # WiFi connection (scan & connect)
 bindsym Print exec flameshot gui                           # Screenshot tool
 bindsym $mod+Shift+s exec flameshot gui                    # Screenshot (Alt+Shift+S)
 bindsym $mod+Shift+b exec blueman-manager                  # Bluetooth manager
@@ -200,6 +200,7 @@ bindsym $mod+r mode "resize"
 # ------------------------------------------
 
 # Auto-start apps for beauty and functionality
+exec --no-startup-id ~/bin/fix-dpi.sh
 exec --no-startup-id nm-applet
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
