@@ -69,8 +69,7 @@ client.background       $base
 floating_modifier $mod
 
 # start a terminal
-# bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 # bindsym $mod+space exec "/home/theprimeagen/dotfiles/awesome-streamerrc/ThePrimeagen/tmux2"
@@ -79,6 +78,13 @@ bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher) - much prettier than dmenu!
 bindsym $mod+d exec --no-startup-id rofi -show drun
+
+# Essential tools keybindings
+bindsym $mod+Shift+f exec thunar                           # File manager
+bindsym $mod+Shift+v exec pavucontrol                      # Volume control
+bindsym Print exec flameshot gui                           # Screenshot tool
+bindsym $mod+Shift+s exec flameshot gui                    # Screenshot (Alt+Shift+S)
+bindsym $mod+Shift+b exec blueman-manager                  # Bluetooth manager
 
 # change focus
 bindsym $mod+h focus left

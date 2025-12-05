@@ -36,6 +36,7 @@ ln -sf "$(pwd)/polybar/config.ini" ~/.config/polybar/config.ini
 ln -sf "$(pwd)/rofi/config.rasi" ~/.config/rofi/config.rasi
 ln -sf "$(pwd)/picom/picom.conf" ~/.config/picom/picom.conf
 ln -sf "$(pwd)/dunst/dunstrc" ~/.config/dunst/dunstrc
+ln -sf "$(pwd)/alacritty/alacritty.toml" ~/.config/alacritty/alacritty.toml
 
 # Link X resources for high DPI
 echo -e "${BLUE}Linking X resources...${NC}"

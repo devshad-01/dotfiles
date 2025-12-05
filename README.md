@@ -10,15 +10,23 @@ A beautiful i3 window manager setup inspired by ThePrimeagen with Catppuccin Moc
 - **i3wm** - Tiling window manager with vim-like keybindings
 - **Polybar** - Beautiful status bar with system info
 - **Rofi** - Modern app launcher
+- **Alacritty** - Fast, GPU-accelerated terminal emulator
 - **Picom** - Compositor for transparency, rounded corners, and blur effects
 - **Dunst** - Notification daemon
+- **Flameshot** - Powerful screenshot tool
+- **Thunar** - Fast file manager
+- **CopyQ** - Advanced clipboard manager
+- **Pavucontrol** - Volume control GUI
+- **Blueman** - Bluetooth manager
 - **Catppuccin Mocha** - Consistent color scheme across all apps
 - **High DPI optimized** - Perfect for high-resolution laptops (HP Elite x360 1030 G2, etc.)
 
 ## Required Packages
 
 ```bash
-sudo apt install i3 rofi polybar picom dunst feh nitrogen lxappearance -y
+sudo apt install i3 rofi polybar picom dunst feh nitrogen lxappearance \
+                 alacritty thunar pavucontrol flameshot copyq blueman \
+                 xfce4-power-manager arandr -y
 ```
 
 ## Installation
@@ -60,8 +68,12 @@ i3-msg restart
 ## Key Bindings
 
 ### Window Management
-- `Alt + Enter` - Open terminal
+- `Alt + Enter` - Open terminal (Alacritty)
 - `Alt + d` - App launcher (Rofi)
+- `Alt + Shift + f` - File manager (Thunar)
+- `Alt + Shift + v` - Volume control (Pavucontrol)
+- `Alt + Shift + b` - Bluetooth manager
+- `Print` or `Alt + Shift + s` - Screenshot (Flameshot)
 - `Alt + h/j/k/l` - Navigate windows (vim-style)
 - `Alt + Shift + h/j/k/l` - Move windows
 - `Alt + Shift + q` - Close window
@@ -140,7 +152,7 @@ If text is too small (e.g., on HP Elite x360 or similar high-res laptops):
 
 ## Fonts
 
-Recommended fonts (install for best experience):
+Recommended fonts (install for`` best experience):
 ```bash
 # JetBrains Mono Nerd Font (for icons in polybar/terminal)
 # Noto Sans
