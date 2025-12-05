@@ -1,0 +1,135 @@
+/**
+ * Rofi Configuration - Catppuccin Mocha Theme
+ * App launcher for i3wm
+ */
+
+configuration {
+    modi: "drun,run,window";
+    display-drun: "Apps";
+    display-run: "Run";
+    display-window: "Windows";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    font: "JetBrainsMono Nerd Font 12";
+    drun-display-format: "{name}";
+    terminal: "i3-sensible-terminal";
+}
+
+* {
+    /* Catppuccin Mocha Colors */
+    bg: #1e1e2e;
+    bg-alt: #313244;
+    fg: #cdd6f4;
+    fg-alt: #6c7086;
+    
+    blue: #89b4fa;
+    lavender: #b4befe;
+    sapphire: #74c7ec;
+    sky: #89dceb;
+    teal: #94e2d5;
+    green: #a6e3a1;
+    yellow: #f9e2af;
+    peach: #fab387;
+    maroon: #eba0ac;
+    red: #f38ba8;
+    mauve: #cba6f7;
+    pink: #f5c2e7;
+    flamingo: #f2cdcd;
+    rosewater: #f5e0dc;
+    
+    background-color: transparent;
+    text-color: @fg;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    location: center;
+    width: 600;
+    background-color: @bg;
+    border: 2px;
+    border-color: @blue;
+    border-radius: 8px;
+}
+
+mainbox {
+    padding: 12;
+}
+
+inputbar {
+    background-color: @bg-alt;
+    border-color: @blue;
+    border: 2px;
+    border-radius: 8px;
+    padding: 8px 16px;
+    spacing: 8px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    text-color: @blue;
+}
+
+entry {
+    placeholder: "Search...";
+    placeholder-color: @fg-alt;
+}
+
+message {
+    margin: 12px 0 0;
+    border-radius: 8px;
+    border-color: @bg-alt;
+    background-color: @bg-alt;
+}
+
+textbox {
+    padding: 8px 24px;
+}
+
+listview {
+    background-color: transparent;
+    margin: 12px 0 0;
+    lines: 8;
+    columns: 1;
+    fixed-height: false;
+    border: 0;
+}
+
+element {
+    padding: 8px 16px;
+    spacing: 8px;
+    border-radius: 8px;
+}
+
+element normal normal {
+    text-color: @fg;
+}
+
+element normal urgent {
+    text-color: @red;
+}
+
+element normal active {
+    text-color: @blue;
+}
+
+element selected normal, element selected active {
+    background-color: @blue;
+    text-color: @bg;
+}
+
+element selected urgent {
+    background-color: @red;
+    text-color: @bg;
+}
+
+element-icon {
+    size: 1em;
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color: inherit;
+    vertical-align: 0.5;
+}
