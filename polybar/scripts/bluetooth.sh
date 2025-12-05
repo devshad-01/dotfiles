@@ -2,21 +2,14 @@
 
 # Polybar Bluetooth status script
 
-if command -v bluetoothctl &> /dev/null; then
-    power_status=$(bluetoothctl show | grep "Powered: yes")
-    
-    if [ -n "$power_status" ]; then
-        # Check if any device is connected
-        connected=$(bluetoothctl devices Connected | wc -l)
-        
-        if [ "$connected" -gt 0 ]; then
-            echo "%{F#89b4fa}󰂯%{F-} ON"
-        else
-            echo "%{F#6c7086}󰂲%{F-} OFF"
-        fi
+if bluetoothctl show 2>/dev/null | grep -q "Powered: yes"; then
+    # Bluetooth is on
+    if bluetoothctl devices Connected 2>/dev/null | grep -q "Device"; then
+        echo "%{F#89b4fa}BT%{F-} ON"
     else
-        echo "%{F#6c7086}󰂲%{F-}"
+        echo "%{F#6c7086}BT%{F-} OFF"
     fi
 else
-    echo ""
+    # Bluetooth is off or not available
+    echo "%{F#6c7086}BT%{F-}"
 fi
