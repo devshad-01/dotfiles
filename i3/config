@@ -82,6 +82,7 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 # Essential tools keybindings
 bindsym $mod+Shift+f exec pcmanfm-qt                       # File manager (Qt-based, better theming)
 bindsym $mod+Shift+v exec pavucontrol                      # Volume control
+bindsym $mod+Shift+w exec nm-connection-editor             # WiFi/Network settings
 bindsym Print exec flameshot gui                           # Screenshot tool
 bindsym $mod+Shift+s exec flameshot gui                    # Screenshot (Alt+Shift+S)
 bindsym $mod+Shift+b exec blueman-manager                  # Bluetooth manager

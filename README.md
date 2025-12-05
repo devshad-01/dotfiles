@@ -70,8 +70,9 @@ i3-msg restart
 ### Window Management
 - `Alt + Enter` - Open terminal (Alacritty)
 - `Alt + d` - App launcher (Rofi)
-- `Alt + Shift + f` - File manager (Thunar)
+- `Alt + Shift + f` - File manager (PCManFM-Qt)
 - `Alt + Shift + v` - Volume control (Pavucontrol)
+- `Alt + Shift + w` - WiFi/Network settings
 - `Alt + Shift + b` - Bluetooth manager
 - `Print` or `Alt + Shift + s` - Screenshot (Flameshot)
 - `Alt + h/j/k/l` - Navigate windows (vim-style)
@@ -146,6 +147,14 @@ feh --bg-scale ~/Pictures/wallpaper.jpg
 ```
 
 The wallpaper will load automatically on next i3 restart.
+
+### Brightness Control (First Time Setup)
+If brightness keys don't work, you need to add yourself to the video group:
+```bash
+sudo usermod -aG video $USER
+sudo usermod -aG input $USER
+```
+Then **log out and log back in** for the changes to take effect. After that, brightness keys and polybar scroll will work.
 
 ### High DPI Displays
 If text is too small (e.g., on HP Elite x360 or similar high-res laptops):
