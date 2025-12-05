@@ -133,3 +133,6 @@ element-text {
     text-color: inherit;
     vertical-align: 0.5;
 }
+//@theme "/usr/share/rofi/themes/sidebar.rasi"
+//@theme "/usr/share/rofi/themes/fancy.rasi"
+@theme "/usr/share/rofi/themes/sidebar-v2.rasi"
