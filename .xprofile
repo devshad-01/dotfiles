@@ -4,10 +4,10 @@
 # X11 DPI setting
 xrdb -merge ~/.Xresources
 
-# GTK scaling (for Firefox, GNOME apps, lxappearance) - 2x for 4K display
-export GDK_SCALE=2
+# GTK scaling - rely on DPI instead of scale multiplier
+export GDK_SCALE=1
 export GDK_DPI_SCALE=1.0
 
-# Qt scaling (for pcmanfm-qt, etc.) - use DPI 192 for 4K
+# Qt scaling - use DPI 192 for 4K
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_FONT_DPI=192
