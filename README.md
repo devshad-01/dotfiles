@@ -1,32 +1,31 @@
 # My i3wm Dotfiles
 
-A beautiful i3 window manager setup inspired by ThePrimeagen with Catppuccin Mocha color scheme.
-
-## Screenshots
-(Add your screenshots here!)
+A beautiful i3 window manager setup with Catppuccin Mocha color scheme, optimized for 4K displays.
 
 ## Features
 
 - **i3wm** - Tiling window manager with vim-like keybindings
-- **Polybar** - Beautiful status bar with system info
+- **Polybar** - Beautiful status bar with interactive modules (WiFi, Bluetooth, Brightness)
 - **Rofi** - Modern app launcher
-- **Alacritty** - Fast, GPU-accelerated terminal emulator
+- **Kitty** - Fast, GPU-accelerated terminal emulator
 - **Picom** - Compositor for transparency, rounded corners, and blur effects
 - **Dunst** - Notification daemon
 - **Flameshot** - Powerful screenshot tool
-- **Thunar** - Fast file manager
+- **PCManFM-Qt** - Fast Qt-based file manager
 - **CopyQ** - Advanced clipboard manager
 - **Pavucontrol** - Volume control GUI
 - **Blueman** - Bluetooth manager
+- **ARandR** - Display configuration tool
 - **Catppuccin Mocha** - Consistent color scheme across all apps
-- **High DPI optimized** - Perfect for high-resolution laptops (HP Elite x360 1030 G2, etc.)
+- **4K Display Support** - 2560x1440 @ 125% scaling for HP Elite x360 1030 G2
 
 ## Required Packages
 
 ```bash
-sudo apt install i3 rofi polybar picom dunst feh nitrogen lxappearance \
-                 alacritty thunar pavucontrol flameshot copyq blueman \
-                 xfce4-power-manager arandr -y
+sudo apt install i3 rofi polybar picom dunst feh lxappearance \
+                 kitty pcmanfm-qt pavucontrol flameshot copyq blueman \
+                 xfce4-power-manager arandr brightnessctl nm-applet \
+                 network-manager fonts-noto fonts-font-awesome -y
 ```
 
 ## Installation
@@ -68,11 +67,12 @@ i3-msg restart
 ## Key Bindings
 
 ### Window Management
-- `Alt + Enter` - Open terminal (Alacritty)
+- `Alt + Enter` - Open terminal (Kitty)
 - `Alt + d` - App launcher (Rofi)
 - `Alt + Shift + f` - File manager (PCManFM-Qt)
 - `Alt + Shift + v` - Volume control (Pavucontrol)
-- `Alt + Shift + w` - WiFi connection (scan & connect to networks)
+- `Alt + Shift + w` - WiFi connection (nmtui - scan & connect)
+- `Alt + Shift + d` - Display settings (ARandR)
 - `Alt + Shift + b` - Bluetooth manager
 - `Print` or `Alt + Shift + s` - Screenshot (Flameshot)
 - `Alt + h/j/k/l` - Navigate windows (vim-style)
@@ -100,7 +100,12 @@ i3-msg restart
 
 ### Media Keys
 - `F-keys` - Volume up/down/mute
-- Brightness keys - Increase/decrease screen brightness
+- `Fn + Brightness` - Increase/decrease screen brightness (requires video group)
+- **Polybar Modules**:
+  - Click WiFi icon - Opens nmtui for network connections
+  - Click Bluetooth icon - Opens Blueman manager
+  - Scroll on Volume - Change volume
+  - Scroll on Brightness - Adjust brightness
 
 ## Color Scheme
 
@@ -117,10 +122,14 @@ Using Catppuccin Mocha:
 
 ### Change Wallpaper
 ```bash
-nitrogen
-# Select your wallpaper and set it
-# It will be restored automatically on login
+# Easy method - automatically sets and persists
+feh --bg-scale ~/path/to/your-image.jpg
+
+# Or copy to Pictures folder
+cp your-image.jpg ~/Pictures/wallpaper.jpg
+feh --bg-scale ~/Pictures/wallpaper.jpg
 ```
+Wallpaper will restore automatically on login via `~/.fehbg`.
 
 ### Modify Polybar
 Edit `~/.config/polybar/config.ini` to customize modules, colors, fonts, etc.
@@ -136,17 +145,10 @@ Edit `~/.config/picom/picom.conf` to change opacity and blur settings.
 - Test rofi themes: `rofi-theme-selector`
 
 ### Set Wallpaper
-Easy way to set your wallpaper:
 ```bash
-# Method 1: Use the helper script
-~/bin/set-wallpaper.sh ~/Downloads/your-image.jpg
-
-# Method 2: Manually
-cp your-image.jpg ~/Pictures/wallpaper.jpg
-feh --bg-scale ~/Pictures/wallpaper.jpg
+feh --bg-scale ~/path/to/image.jpg
 ```
-
-The wallpaper will load automatically on next i3 restart.
+The wallpaper persists automatically via `~/.fehbg`.
 
 ### Brightness Control (First Time Setup)
 If brightness keys don't work, you need to add yourself to the video group:
@@ -156,37 +158,37 @@ sudo usermod -aG input $USER
 ```
 Then **log out and log back in** for the changes to take effect. After that, brightness keys and polybar scroll will work.
 
-### High DPI Displays
-If text is too small (e.g., on HP Elite x360 or similar high-res laptops):
-- Fonts are already set to larger sizes (14-16pt)
-- For terminal, install and configure a terminal with better font support:
-  ```bash
-  sudo apt install kitty
-  # Edit ~/.config/kitty/kitty.conf and set: font_size 14.0
-  ```
-- Or for xterm/urxvt, add to `~/.Xresources`:
-  ```
-  Xft.dpi: 144
-  XTerm*faceName: JetBrainsMono Nerd Font
-  XTerm*faceSize: 14
-  ```
-  Then run: `xrdb ~/.Xresources`
+### High DPI / 4K Displays
+Configured for 4K displays at 2560x1440 resolution with 125% scaling:
+- **Display**: Automatically set to 2560x1440 on startup
+- **DPI**: 120 (125% scaling)
+- **GTK Apps**: text-scaling-factor 1.25
+- **Qt Apps**: QT_FONT_DPI=120
+- **Terminal**: Kitty with font size 12
+- **Polybar**: Height 48pt, font size 16
+
+To adjust for your display:
+- Use `ARandR` (Alt+Shift+D) for resolution/scaling
+- Edit `.Xresources` to change DPI
+- Edit `.xprofile` for Qt/GTK scaling factors
 
 ## Fonts
 
-Recommended fonts (install for`` best experience):
+Required fonts (install for best experience):
 ```bash
-# JetBrains Mono Nerd Font (for icons in polybar/terminal)
-# Noto Sans
-# Font Awesome
+# Install Nerd Fonts for icons
+sudo apt install fonts-noto fonts-font-awesome
+
+# JetBrains Mono Nerd Font (download from nerdfonts.com)
+# Or use system monospace fonts
 ```
 
 ## Credits
 
-- Inspired by [ThePrimeagen](https://github.com/ThePrimeagen/dotfiles)
 - [Catppuccin](https://github.com/catppuccin/catppuccin) color scheme
 - [i3wm](https://i3wm.org/)
 - [Polybar](https://github.com/polybar/polybar)
+- [Kitty Terminal](https://sw.kovidgoyal.net/kitty/)
 
 ## License
 
