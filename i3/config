@@ -69,7 +69,7 @@ client.background       $base
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 # bindsym $mod+space exec "/home/theprimeagen/dotfiles/awesome-streamerrc/ThePrimeagen/tmux2"
@@ -82,7 +82,7 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 # Essential tools keybindings
 bindsym $mod+Shift+f exec pcmanfm-qt                       # File manager (Qt-based, better theming)
 bindsym $mod+Shift+v exec pavucontrol                      # Volume control
-bindsym $mod+Shift+w exec alacritty -e nmtui               # WiFi connection (scan & connect)
+bindsym $mod+Shift+w exec kitty -e nmtui                   # WiFi connection (scan & connect)
 bindsym $mod+Shift+d exec arandr                           # Display settings (Alt+Shift+D)
 bindsym Print exec flameshot gui                           # Screenshot tool
 bindsym $mod+Shift+s exec flameshot gui                    # Screenshot (Alt+Shift+S)
