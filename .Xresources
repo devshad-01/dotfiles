@@ -24,3 +24,6 @@ URxvt*font: xft:JetBrainsMono Nerd Font:size=14
 URxvt*letterSpace: 0
 URxvt*background: #1e1e2e
 URxvt*foreground: #cdd6f4
+
+! Cursor size (increase from default 24)
+Xcursor.size: 32
