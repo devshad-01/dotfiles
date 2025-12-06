@@ -25,4 +25,4 @@ URxvt*background: #1e1e2e
 URxvt*foreground: #cdd6f4
 
 ! Cursor size (increase from default 24)
-Xcursor.size: 32
+Xcursor.size: 48
