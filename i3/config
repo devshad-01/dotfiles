@@ -228,8 +228,8 @@ bindsym $mod+Shift+period exec systemctl suspend
 # ===== SETTINGS & APPEARANCE =====
 # Easy access to appearance settings
 bindsym $mod+Shift+a exec lxappearance          # Theme, icons, cursor (Alt+Shift+A)
-bindsym $mod+Shift+d exec arandr                # Display settings (Alt+Shift+D)
 
 # Touchpad tap-to-click fix
 exec_always --no-startup-id xinput set-prop 16 "libinput Tapping Enabled" 1
 exec_always --no-startup-id xinput set-prop 16 "libinput Tapping Drag Enabled" 1
+exec_always --no-startup-id xinput set-prop 16 "libinput Disable While Typing Enabled" 0
