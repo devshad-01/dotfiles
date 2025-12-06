@@ -11,3 +11,5 @@ export GDK_DPI_SCALE=1.0
 # Qt scaling - use DPI 132 for balanced scaling at 2560x1440
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_FONT_DPI=132
+export XCURSOR_SIZE=48
+export XCURSOR_THEME=Adwaita
