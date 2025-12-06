@@ -208,6 +208,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id ~/.fehbg
 exec --no-startup-id dunst
+exec --no-startup-id copyq
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # FKeys
