@@ -87,6 +87,7 @@ bindsym $mod+Shift+d exec arandr                           # Display settings (A
 bindsym Print exec flameshot gui                           # Screenshot tool
 bindsym $mod+Shift+s exec flameshot gui                    # Screenshot (Alt+Shift+S)
 bindsym $mod+Shift+b exec blueman-manager                  # Bluetooth manager
+bindsym $mod+Shift+x exec ~/bin/lock.sh                      # Lock screen (Alt+Shift+X)
 
 # change focus
 bindsym $mod+h focus left
