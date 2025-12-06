@@ -1,8 +1,8 @@
 ! X Resources Configuration for High DPI Display
 ! HP Elite x360 1030 G2 - 2560x1440 on 13.3 inch display
 
-! DPI Settings - 120 = 125% scaling
-Xft.dpi: 120
+! DPI Settings - 132 = 137.5% scaling (balanced for Electron + GTK apps)
+Xft.dpi: 132
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintfull
