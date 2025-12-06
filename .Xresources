@@ -25,4 +25,9 @@ URxvt*background: #1e1e2e
 URxvt*foreground: #cdd6f4
 
 ! Cursor size (increase from default 24)
+
+! Big cursor for better visibility
+
+! Cursor settings
+Xcursor.theme: Adwaita
 Xcursor.size: 48
