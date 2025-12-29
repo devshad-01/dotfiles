@@ -28,7 +28,7 @@ void main(String[] args) throws Exception {
     for (var build : List.of("pom.xml", "build.gradle", "build.gradle.kts")) {
         var f = new File(dir, build);
         if (f.exists()) {
-            new ProcessBuilder("idea", f.getAbsolutePath())
+            new ProcessBuilder("intellij-idea-ultimate", f.getAbsolutePath())
                 .inheritIO()
                 .start();
             return;
