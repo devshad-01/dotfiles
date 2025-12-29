@@ -233,3 +233,9 @@ bindsym $mod+Shift+a exec lxappearance          # Theme, icons, cursor (Alt+Shif
 exec_always --no-startup-id xinput set-prop 16 "libinput Tapping Enabled" 1
 exec_always --no-startup-id xinput set-prop 16 "libinput Tapping Drag Enabled" 1
 exec_always --no-startup-id xinput set-prop 16 "libinput Disable While Typing Enabled" 0
+
+# Battery warning
+exec_always --no-startup-id /home/shad/dotfiles/bin/battery-check.sh
+
+# Power button menu
+bindsym XF86PowerOff exec "i3-nagbar -t warning -m 'Power Options' -b 'Logout' 'i3-msg exit' -b 'Shutdown' 'systemctl poweroff' -b 'Reboot' 'systemctl reboot' -b 'Suspend' 'systemctl suspend' -b 'Cancel' ''"
