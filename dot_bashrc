@@ -122,3 +122,5 @@ export NVM_DIR="$HOME/.nvm"
 alias cdproject="cd ~/Projects/ALX-TRAVEL/alx_travel_app/alx_travel_app/alx_travel_app"
 
 export PATH="$HOME/bin:$PATH"
+
+alias uao='java --enable-preview --source 25 ~/bin/uao.java'
