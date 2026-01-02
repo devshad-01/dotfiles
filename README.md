@@ -193,7 +193,7 @@ Configured for displays at 1920x1080 resolution:
 - **GTK Apps**: text-scaling-factor 1.0
 - **Qt Apps**: QT_FONT_DPI=96
 - **Terminal**: Kitty with font size 12
-- **Polybar**: Height 28pt, font size 10
+- **Polybar**: Height 20pt, font size 10 (ultra-compact)
 
 To adjust for your display:
 

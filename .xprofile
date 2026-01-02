@@ -1,3 +1,6 @@
+# Set display resolution first (before i3 starts)
+xrandr --output eDP-1 --mode 1920x1080
+
 # GTK Dark Theme
 export GTK_THEME=Yaru-dark
 export GTK2_RC_FILES=$HOME/.gtkrc-2.0
