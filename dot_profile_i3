@@ -6,16 +6,19 @@ xrdb -merge ~/.Xresources
 
 # Qt applications scaling
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
-export QT_SCALE_FACTOR=1.0
-export QT_FONT_DPI=120
+export QT_SCALE_FACTOR=1.5
+export QT_FONT_DPI=144
 
 # GTK applications scaling  
 export GDK_SCALE=1
-export GDK_DPI_SCALE=1.25
+export GDK_DPI_SCALE=1.5
 
 # Cursor size
-export XCURSOR_SIZE=24
+export XCURSOR_SIZE=32
+
+# Force dark theme for all GTK apps
+export GTK_THEME=Yaru-dark
 
 # Apply GTK settings
-gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
+gsettings set org.gnome.desktop.interface text-scaling-factor 1.5
 gsettings set org.gnome.desktop.interface font-name 'Noto Sans 11'

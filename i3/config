@@ -47,6 +47,18 @@ set $crust     #11111b
 
 # Window borders and title bars
 for_window [class="^.*"] border pixel 2
+
+# Float file chooser dialogs
+for_window [class="Nautilus"] floating enable, resize set 900 650, move position center
+for_window [class="Org.gnome.Nautilus"] floating enable, resize set 900 650, move position center
+for_window [window_role="GtkFileChooserDialog"] floating enable, resize set 900 650, move position center
+for_window [title="Open File"] floating enable, resize set 900 650, move position center
+for_window [title="Save File"] floating enable, resize set 900 650, move position center
+for_window [title="Save As"] floating enable, resize set 900 650, move position center
+for_window [title="Select a File"] floating enable, resize set 900 650, move position center
+for_window [window_role="pop-up"] floating enable
+for_window [window_type="dialog"] floating enable, move position center
+
 client.focused          $blue     $base $text  $blue     $blue
 client.focused_inactive $surface0 $base $text  $surface0 $surface0
 client.unfocused        $surface0 $base $text  $surface0 $surface0
@@ -202,7 +214,7 @@ bindsym $mod+r mode "resize"
 # ------------------------------------------
 
 # Auto-start apps for beauty and functionality
-exec --no-startup-id xrandr --output eDP-1 --mode 2560x1440
+exec_always --no-startup-id sleep 2 && xrandr --output eDP-1 --mode 1920x1080
 exec --no-startup-id ~/bin/fix-dpi.sh
 exec --no-startup-id nm-applet
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
@@ -211,6 +223,18 @@ exec --no-startup-id dunst
 exec --no-startup-id copyq
 exec --no-startup-id ~/bin/touchpad-setup.sh
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+exec --no-startup-id ~/.config/theme-monitor.sh
+
+# Set GTK dark theme on startup
+exec --no-startup-id xsettingsd
+exec_always --no-startup-id dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+exec_always --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-dark'
+exec_always --no-startup-id gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+exec_always --no-startup-id gsettings set org.gnome.desktop.interface text-scaling-factor 1.0
+
+# Set environment variables for dark theme
+exec_always --no-startup-id bash -c 'export GTK_THEME=Yaru-dark; export GTK2_RC_FILES=$HOME/.gtkrc-2.0'
 
 # FKeys
 # Pulse Audio controls
@@ -227,7 +251,7 @@ bindsym $mod+Shift+period exec systemctl suspend
 
 # ===== SETTINGS & APPEARANCE =====
 # Easy access to appearance settings
-bindsym $mod+Shift+a exec lxappearance          # Theme, icons, cursor (Alt+Shift+A)
+bindsym $mod+Shift+a exec lxappearance && ~/.config/lxappearance-fix.sh
 
 # Touchpad tap-to-click fix
 exec_always --no-startup-id xinput set-prop 16 "libinput Tapping Enabled" 1

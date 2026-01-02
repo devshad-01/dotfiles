@@ -1,6 +1,6 @@
 # My i3wm Dotfiles
 
-A beautiful i3 window manager setup with Catppuccin Mocha color scheme, optimized for 4K displays.
+A beautiful i3 window manager setup with Yaru-dark theme, optimized for Full HD displays.
 
 ## Features
 
@@ -16,21 +16,22 @@ A beautiful i3 window manager setup with Catppuccin Mocha color scheme, optimize
 - **Pavucontrol** - Volume control GUI
 - **Blueman** - Bluetooth manager
 - **ARandR** - Display configuration tool
-- **Catppuccin Mocha** - Consistent color scheme across all apps
-- **4K Display Support** - 2560x1440 @ 125% scaling for HP Elite x360 1030 G2
+- **Yaru Dark Theme** - Ubuntu's native dark theme applied consistently across GTK2/3/4
+- **Display** - 1920x1080 resolution for optimal readability
 
 ## Required Packages
 
 ```bash
-sudo apt install i3 rofi polybar picom dunst feh lxappearance \
+sudo apt install i3 rofi polybar picom dunst feh xsettingsd \
                  kitty pcmanfm-qt pavucontrol flameshot copyq blueman \
                  xfce4-power-manager arandr brightnessctl nm-applet \
-                 network-manager fonts-noto fonts-font-awesome -y
+                 network-manager fonts-noto fonts-font-awesome papirus-icon-theme -y
 ```
 
 ## Installation
 
 ### Quick Install
+
 ```bash
 # Clone the repository
 git clone https://github.com/devshad-01/dotfiles.git ~/.dotfiles
@@ -44,19 +45,29 @@ chmod +x install.sh
 ### Manual Install
 ```bash
 # Create config directories
-mkdir -p ~/.config/{i3,polybar,rofi,picom,dunst}
+mkdir -p ~/.config/{i3,polybar,rofi,picom,dunst,kitty,gtk-2.0,gtk-3.0,gtk-4.0}
 mkdir -p ~/bin
 
 # Link configurations
-ln -sf ~/.dotfiles/i3/config ~/.config/i3/config
-ln -sf ~/.dotfiles/polybar/config.ini ~/.config/polybar/config.ini
-ln -sf ~/.dotfiles/rofi/config.rasi ~/.config/rofi/config.rasi
-ln -sf ~/.dotfiles/picom/picom.conf ~/.config/picom/picom.conf
-ln -sf ~/.dotfiles/dunst/dunstrc ~/.config/dunst/dunstrc
-ln -sf ~/.dotfiles/bin/launch-polybar.sh ~/.config/polybar/launch.sh
+ln -sf ~/dotfiles/i3/config ~/.config/i3/config
+ln -sf ~/dotfiles/polybar/config.ini ~/.config/polybar/config.ini
+ln -sf ~/dotfiles/rofi/config.rasi ~/.config/rofi/config.rasi
+ln -sf ~/dotfiles/picom/picom.conf ~/.config/picom/picom.conf
+ln -sf ~/dotfiles/dunst/dunstrc ~/.config/dunst/dunstrc
+ln -sf ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
+ln -sf ~/dotfiles/bin/launch-polybar.sh ~/.config/polybar/launch.sh
+
+# Link GTK and theme configs
+ln -sf ~/dotfiles/.xprofile ~/.xprofile
+ln -sf ~/dotfiles/.xsettingsd ~/.xsettingsd
+ln -sf ~/dotfiles/.gtkrc-2.0 ~/.gtkrc-2.0
+ln -sf ~/dotfiles/gtk-2.0/gtkrc ~/.config/gtk-2.0/gtkrc
+ln -sf ~/dotfiles/gtk-3.0/settings.ini ~/.config/gtk-3.0/settings.ini
+ln -sf ~/dotfiles/gtk-4.0/settings.ini ~/.config/gtk-4.0/settings.ini
 
 # Make scripts executable
 chmod +x ~/.config/polybar/launch.sh
+chmod +x ~/dotfiles/bin/*.sh
 
 # Reload i3
 i3-msg reload
@@ -67,6 +78,7 @@ i3-msg restart
 ## Key Bindings
 
 ### Window Management
+
 - `Alt + Enter` - Open terminal (Kitty)
 - `Alt + d` - App launcher (Rofi)
 - `Alt + Shift + f` - File manager (PCManFM-Qt)
@@ -81,10 +93,12 @@ i3-msg restart
 - `Alt + f` - Fullscreen
 
 ### Workspaces
+
 - `Alt + 1-9` - Switch workspace
 - `Alt + Shift + 1-9` - Move window to workspace
 
 ### Layouts
+
 - `Alt + s` - Stacking layout
 - `Alt + w` - Tabbed layout
 - `Alt + e` - Toggle split layout
@@ -92,6 +106,7 @@ i3-msg restart
 - `Alt + v` - Vertical split
 
 ### System
+
 - `Alt + Shift + c` - Reload config
 - `Alt + Shift + r` - Restart i3
 - `Alt + Shift + e` - Exit i3
@@ -99,6 +114,7 @@ i3-msg restart
 - `Alt + Shift + Space` - Toggle floating
 
 ### Media Keys
+
 - `F-keys` - Volume up/down/mute
 - `Fn + Brightness` - Increase/decrease screen brightness (requires video group)
 - **Polybar Modules**:
@@ -110,6 +126,7 @@ i3-msg restart
 ## Color Scheme
 
 Using Catppuccin Mocha:
+
 - Background: `#1e1e2e`
 - Foreground: `#cdd6f4`
 - Blue: `#89b4fa`
@@ -121,6 +138,7 @@ Using Catppuccin Mocha:
 ## Customization
 
 ### Change Wallpaper
+
 ```bash
 # Easy method - automatically sets and persists
 feh --bg-scale ~/path/to/your-image.jpg
@@ -129,12 +147,15 @@ feh --bg-scale ~/path/to/your-image.jpg
 cp your-image.jpg ~/Pictures/wallpaper.jpg
 feh --bg-scale ~/Pictures/wallpaper.jpg
 ```
+
 Wallpaper will restore automatically on login via `~/.fehbg`.
 
 ### Modify Polybar
+
 Edit `~/.config/polybar/config.ini` to customize modules, colors, fonts, etc.
 
 ### Adjust Transparency/Blur
+
 Edit `~/.config/picom/picom.conf` to change opacity and blur settings.
 
 ## Tips
@@ -145,29 +166,37 @@ Edit `~/.config/picom/picom.conf` to change opacity and blur settings.
 - Test rofi themes: `rofi-theme-selector`
 
 ### Set Wallpaper
+
 ```bash
 feh --bg-scale ~/path/to/image.jpg
 ```
+
 The wallpaper persists automatically via `~/.fehbg`.
 
 ### Brightness Control (First Time Setup)
+
 If brightness keys don't work, you need to add yourself to the video group:
+
 ```bash
 sudo usermod -aG video $USER
 sudo usermod -aG input $USER
 ```
+
 Then **log out and log back in** for the changes to take effect. After that, brightness keys and polybar scroll will work.
 
 ### High DPI / 4K Displays
-Configured for 4K displays at 2560x1440 resolution with 125% scaling:
-- **Display**: Automatically set to 2560x1440 on startup
-- **DPI**: 120 (125% scaling)
-- **GTK Apps**: text-scaling-factor 1.25
-- **Qt Apps**: QT_FONT_DPI=120
+
+Configured for displays at 1920x1080 resolution:
+
+- **Display**: Automatically set to 1920x1080 on startup
+- **DPI**: 96 (standard)
+- **GTK Apps**: text-scaling-factor 1.0
+- **Qt Apps**: QT_FONT_DPI=96
 - **Terminal**: Kitty with font size 12
-- **Polybar**: Height 48pt, font size 16
+- **Polybar**: Height 28pt, font size 10
 
 To adjust for your display:
+
 - Use `ARandR` (Alt+Shift+D) for resolution/scaling
 - Edit `.Xresources` to change DPI
 - Edit `.xprofile` for Qt/GTK scaling factors
@@ -175,6 +204,7 @@ To adjust for your display:
 ## Fonts
 
 Required fonts (install for best experience):
+
 ```bash
 # Install Nerd Fonts for icons
 sudo apt install fonts-noto fonts-font-awesome
