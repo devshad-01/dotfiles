@@ -125,3 +125,16 @@ export PATH="$HOME/bin:$PATH"
 
 alias uao='java --enable-preview --source 25 ~/bin/uao.java'
 alias idea='intellij-idea-ultimate'
+export PATH=$HOME/.local/bin:$PATH
+
+if [ -d "$HOME/.local/flutter/bin" ]; then
+    export PATH="$HOME/.local/flutter/bin:$PATH"
+fi
+
+if [ -d "$HOME/.pub-cache/bin" ]; then
+    export PATH="$HOME/.pub-cache/bin:$PATH"
+fi
+export CHROME_EXECUTABLE=/snap/bin/brave
+export ELECTRON_EXTRA_FLAGS="--disable-gpu --disable-software-rasterizer --disable-gpu-sandbox"
+export ELECTRON_OZONE_PLATFORM_HINT=x11
+export LIBGL_ALWAYS_SOFTWARE=0

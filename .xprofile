@@ -1,7 +1,8 @@
-# Set display resolution first (before i3 starts)
-xrandr --output eDP-1 --mode 1920x1080
-
-# GTK Dark Theme
-export GTK_THEME=Yaru-dark
-export GTK2_RC_FILES=$HOME/.gtkrc-2.0
-export QT_QPA_PLATFORMTHEME=gtk2
+# Scaling for 4K panel running at 1080p
+# Xft.dpi=132 handles browsers/Electron apps
+# These counteract it for GTK and Qt apps
+export GDK_SCALE=1
+export GDK_DPI_SCALE=0.727
+export QT_SCALE_FACTOR=1.0
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export QT_FONT_DPI=96
